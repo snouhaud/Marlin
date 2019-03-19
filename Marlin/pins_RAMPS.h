@@ -58,7 +58,7 @@
 #ifdef IS_RAMPS_13
   #define SERVO0_PIN        7   // RAMPS_13 // Will conflict with BTN_EN2 on LCD_I2C_VIKI
 #else
-  #define SERVO0_PIN       11
+  #define SERVO0_PIN       -1 // 11
 #endif
 #define SERVO1_PIN          6
 #define SERVO2_PIN          5
@@ -71,12 +71,17 @@
 //
 #define X_MIN_PIN           3
 #ifndef X_MAX_PIN
-  #define X_MAX_PIN         2
+  #define X_MAX_PIN         -1 // 2
 #endif
 #define Y_MIN_PIN          14
-#define Y_MAX_PIN          15
+#define Y_MAX_PIN          -1 // 15
 #define Z_MIN_PIN          18
-#define Z_MAX_PIN          19
+#define Z_MAX_PIN          -1 // 19
+
+#define IN_PUT        19  // 15
+#define OUT_PUT       12  // 19
+
+#define LED               11  // 65
 
 //
 // Z Probe (when not Z_MIN_PIN)
@@ -513,12 +518,12 @@
 
     #elif ENABLED(MINIPANEL)
 
-      #define BEEPER_PIN        42
+      #define BEEPER_PIN        37 // 42
       // not connected to a pin
-      #define LCD_BACKLIGHT_PIN 65   // backlight LED on A11/D65
+      #define LCD_BACKLIGHT_PIN -1 // 65   // backlight LED on A11/D65
 
-      #define DOGLCD_A0         44
-      #define DOGLCD_CS         66
+      #define DOGLCD_A0         27 // 44
+      #define DOGLCD_CS         25 // 66
 
       // GLCD features
       //#define LCD_CONTRAST   190
@@ -527,11 +532,11 @@
       //#define LCD_SCREEN_ROT_180
       //#define LCD_SCREEN_ROT_270
 
-      #define BTN_EN1           40
-      #define BTN_EN2           63
-      #define BTN_ENC           59
+      #define BTN_EN1           31 // 40
+      #define BTN_EN2           33 // 63
+      #define BTN_ENC           35 // 59
 
-      #define SD_DETECT_PIN     49
+      #define SD_DETECT_PIN     -1 // 49
       #define KILL_PIN          64
 
     #elif ENABLED(ZONESTAR_LCD)
